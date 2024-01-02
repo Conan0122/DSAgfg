@@ -25,6 +25,7 @@ public:
 // T.C = O(n+m)
 // S.C = O(1)
 // Two pointer approach (Accepted)
+
 // This approach simple- Keep one pointer(i) for iterating row and other pointer(j) for coloumn.
 // Start i pointer from arr[0][0] till i< n and j pointer from arr[0][m-1] till j <= 0.
 // Now keep decrement j untill you get 0 and keep updating i as well. The moment you get 0, increment i and check if it equals to 1.
