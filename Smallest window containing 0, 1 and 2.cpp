@@ -25,7 +25,6 @@ class Solution {
             if (zero>=0 && one>=0 && two>=0){
                 int mx = max(zero, max(one, two));
                 int mn = min(zero, min(one, two));
-                
                 ans = min(mx-mn+1, ans);
             }
             i++;
