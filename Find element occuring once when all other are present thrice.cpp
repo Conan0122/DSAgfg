@@ -39,14 +39,19 @@ class Solution {
         for (int i=0; i<32; i++){
             int sum = 0;
             for (int j=0; j<N; j++){
-                // Now to get the if current bit position is set bit or not, we have to AND currrent element with current bit position.
+                // Now to get the current bit position is set bit or not, we have to AND current element with current bit position.
                 // We know our current element is arr[j] and current bit position is (1<<i).
                 if (arr[j]&(1<<i)){
                     sum++;
                 }
             }
             // Now we know that the position with set bits not a multiple of 3 is the set bits of unique number(single number).
+            // Whichever bit position's sum is not a multiple of 3 we need to know it's bit position and add it to our result variable.
             if (sum%3 == 1){
+                // Initially res will be assigned with 0 so we just have to OR current bit position with res variable to know which bit position has set bit,
+                // and bbased on that res gets updated.
+                // Example for 1  1  0 :- we know that second position and third position haas set bit,
+                // so we just OR it with (1<<i) and check which bit position is set.
                 res = res | (1<<i);
             }
         }
