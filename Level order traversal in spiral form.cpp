@@ -40,3 +40,40 @@ vector<int> findSpiral(Node *root)
     
     return ans;
 }
+
+/////////////////////////////////////////////////////////////////////
+// Same using C#
+class Solution
+{
+    public void LotSpiral(Node root, ref List<int> ans){
+        Queue<Node> q = new Queue<Node>();
+        q.Enqueue(root);
+        int levelCount=0;
+        
+        while (q.Count()>0){
+            int nodeCount = q.Count();
+            Stack<int> st = new Stack<int>();
+            
+            while (nodeCount>0){
+                Node temp = q.Dequeue();
+                if (levelCount%2==0) st.Push(temp.data);
+                else ans.Add(temp.data);
+                
+                nodeCount--;
+                if (temp.left!=null) q.Enqueue(temp.left);
+                if (temp.right!=null) q.Enqueue(temp.right);
+            }
+            
+            while(st.Count>0) ans.Add(st.Pop());
+            
+            levelCount++;
+        }
+    }
+    
+    public List<int> findSpiral(Node root)
+    {
+        List<int> ans = new List<int>();
+        LotSpiral(root, ref ans);
+        return ans;
+    }
+}
