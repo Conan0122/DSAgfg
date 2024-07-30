@@ -6,7 +6,6 @@
 // Recursion: Here we just store current node's data (since we gonna rewrite it in next step so we need to store it somwwhere before that so we can use it later.
 // Now change current node's data to sum of left and right subtree.
 // Return sum of current node's data and the element it had before this modification.
-
 int solve(Node* node){
     if (!node->left && !node->right){
         int temp = node->data;
