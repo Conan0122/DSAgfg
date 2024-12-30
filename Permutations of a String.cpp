@@ -9,7 +9,6 @@ void solve(int i, string &s, set<string> &st, int n){
         swap(s[i], s[j]);      // First swao
         solve(i+1, s, st, n);  // Then move to next index and solve it.
         swap(s[i], s[j]);      // Now undo the last swap
-        solve(i+1, s, st, n);  // Move to next index and solve it.
     }
 }
 
