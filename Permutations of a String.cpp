@@ -13,8 +13,6 @@ void solve(int i, string &s, set<string> &st, int n){
 }
 
 vector<string> findPermutation(string &s) {
-    sort(s.begin(), s.end());
-    
     vector<string> ans;
     int n = s.size();
     set<string> st;
